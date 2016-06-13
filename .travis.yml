@@ -14,8 +14,18 @@ before_install:
 script:
   - docker run -v `pwd`:/build rust
     sh -c "
-      ./configure --llvm-root=/usr/lib/llvm-3.7 &&
-      make tidy &&
+      ./configure --llvm-root=/usr/lib/llvm-3.7
+    "
+    
+script:
+  - docker run -v `pwd`:/build rust
+    sh -c "
+      make tidy
+    "
+
+script:
+  - docker run -v `pwd`:/build rust
+    sh -c "
       make check-notidy -j4
     "
 
