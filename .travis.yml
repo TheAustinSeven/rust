@@ -22,7 +22,7 @@ script:
     "
   - docker run -v `pwd`:/build rust
     sh -c "
-      make
+      make -j4
     "
   - docker run -v `pwd`:/build rust
     sh -c "
