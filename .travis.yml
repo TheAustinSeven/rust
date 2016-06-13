@@ -22,6 +22,10 @@ script:
     "
   - docker run -v `pwd`:/build rust
     sh -c "
+      make
+    "
+  - docker run -v `pwd`:/build rust
+    sh -c "
       make check-notidy -j4
     "
 
