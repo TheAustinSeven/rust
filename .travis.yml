@@ -26,7 +26,23 @@ script:
     "
   - docker run -v `pwd`:/build rust
     sh -c "
-      make check-notidy -j4
+      make check-sanitycheck -j4
+    "
+  - docker run -v `pwd`:/build rust
+    sh -c "
+      make cleantmptestlogs -j4
+    "
+  - docker run -v `pwd`:/build rust
+    sh -c "
+      make cleantestlibs -j4
+    "
+  - docker run -v `pwd`:/build rust
+    sh -c "
+      make all -j4
+    "
+  - docker run -v `pwd`:/build rust
+    sh -c "
+      make check-stage2 -j4
     "
 
 # Real testing happens on http://buildbot.rust-lang.org/
