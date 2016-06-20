@@ -142,8 +142,11 @@ supported_targets! {
 
     ("le32-unknown-nacl", le32_unknown_nacl),
     ("asmjs-unknown-emscripten", asmjs_unknown_emscripten),
+
     ("nvptx-unknown-unknown", nvptx_unknown_unknown),
-    ("nvptx64-unknown-unknown", nvptx64_unknown_unknown)
+    ("nvptx64-unknown-unknown", nvptx64_unknown_unknown),
+    ("r600-unknown-unknown", r600_unknown_unknown),
+    ("amdgcn-unknown-unknown", amdgcn_unknown_unknown)
 }
 
 /// Everything `rustc` knows about how to compile for a specific target.
@@ -164,7 +167,7 @@ pub struct Target {
     /// Vendor name to use for conditional compilation.
     pub target_vendor: String,
     /// Architecture to use for ABI considerations. Valid options: "x86",
-    /// "x86_64", "arm", "aarch64", "mips", "powerpc", and "powerpc64".
+    /// "x86_64", "arm", "aarch64", "mips", "powerpc", "powerpc64", "nvptx", "r600", and "amdgcn".
     pub arch: String,
     /// [Data layout](http://llvm.org/docs/LangRef.html#data-layout) to pass to LLVM.
     pub data_layout: String,
