@@ -1097,6 +1097,45 @@ fn declare_intrinsic(ccx: &CrateContext, key: &str) -> Option<ValueRef> {
     ifn!("llvm.nvvm.read.ptx.sreg.nctaid.x", fn() -> t_i32);
     ifn!("llvm.nvvm.read.ptx.sreg.nctaid.y", fn() -> t_i32);
     ifn!("llvm.nvvm.read.ptx.sreg.nctaid.z", fn() -> t_i32);
+
+    ifn!("llvm.amdgcn.read.workdim", fn() -> t_i32);
+    ifn!("llvm.amdgcn.ngroups.x", fn() -> t_i32);
+    ifn!("llvm.amdgcn.ngroups.y", fn() -> t_i32);
+    ifn!("llvm.amdgcn.ngroups.z", fn() -> t_i32);
+    ifn!("llvm.amdgcn.global.size.x", fn() -> t_i32);
+    ifn!("llvm.amdgcn.global.size.y", fn() -> t_i32);
+    ifn!("llvm.amdgcn.global.size.z", fn() -> t_i32);
+    ifn!("llvm.amdgcn.local.size.x", fn() -> t_i32);
+    ifn!("llvm.amdgcn.local.size.y", fn() -> t_i32);
+    ifn!("llvm.amdgcn.local.size.z", fn() -> t_i32);
+    ifn!("llvm.amdgcn.workgroup.id.x", fn() -> t_i32);
+    ifn!("llvm.amdgcn.workgroup.id.y", fn() -> t_i32);
+    ifn!("llvm.amdgcn.workgroup.id.z", fn() -> t_i32);
+    ifn!("llvm.amdgcn.workitem.id.x", fn() -> t_i32);
+    ifn!("llvm.amdgcn.workitem.id.y", fn() -> t_i32);
+    ifn!("llvm.amdgcn.workitem.id.z", fn() -> t_i32);
+    ifn!("llvm.amdgcn.global.offset.x", fn() -> t_i32);
+    ifn!("llvm.amdgcn.global.offset.y", fn() -> t_i32);
+    ifn!("llvm.amdgcn.global.offset.z", fn() -> t_i32);
+    ifn!("llvm.r600.read.workdim", fn() -> t_i32);
+    ifn!("llvm.r600.read.ngroups.x", fn() -> t_i32);
+    ifn!("llvm.r600.read.ngroups.y", fn() -> t_i32);
+    ifn!("llvm.r600.read.ngroups.z", fn() -> t_i32);
+    ifn!("llvm.r600.read.global.size.x", fn() -> t_i32);
+    ifn!("llvm.r600.read.global.size.y", fn() -> t_i32);
+    ifn!("llvm.r600.read.global.size.z", fn() -> t_i32);
+    ifn!("llvm.r600.read.local.size.x", fn() -> t_i32);
+    ifn!("llvm.r600.read.local.size.y", fn() -> t_i32);
+    ifn!("llvm.r600.read.local.size.z", fn() -> t_i32);
+    ifn!("llvm.r600.read.tgid.x", fn() -> t_i32);
+    ifn!("llvm.r600.read.tgid.y", fn() -> t_i32);
+    ifn!("llvm.r600.read.tgid.z", fn() -> t_i32);
+    ifn!("llvm.r600.read.tidig.x", fn() -> t_i32);
+    ifn!("llvm.r600.read.tidig.y", fn() -> t_i32);
+    ifn!("llvm.r600.read.tidig.z", fn() -> t_i32);
+    ifn!("llvm.r600.read.offset.x", fn() -> t_i32);
+    ifn!("llvm.r600.read.offset.y", fn() -> t_i32);
+    ifn!("llvm.r600.read.offset.z", fn() -> t_i32);
     ifn!("llvm.assume", fn(i1) -> void);
 
     if ccx.sess().opts.debuginfo != NoDebugInfo {

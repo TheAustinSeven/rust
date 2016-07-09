@@ -2401,6 +2401,11 @@ pub fn initialize_available_targets() {
                  LLVMInitializeAArch64TargetMC,
                  LLVMInitializeAArch64AsmPrinter,
                  LLVMInitializeAArch64AsmParser);
+    init_target!(llvm_component = "amdgpu",
+                 LLVMInitializeAMDGPUTargetInfo,
+                 LLVMInitializeAMDGPUTarget,
+                 LLVMInitializeAMDGPUTargetMC,
+                 LLVMInitializeAMDGPUAsmPrinter);
     init_target!(llvm_component = "mips",
                  LLVMInitializeMipsTargetInfo,
                  LLVMInitializeMipsTarget,

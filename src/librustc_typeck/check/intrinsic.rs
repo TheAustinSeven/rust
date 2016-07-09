@@ -305,6 +305,22 @@ pub fn check_intrinsic_type(ccx: &CrateCtxt, it: &hir::ForeignItem) {
 
             "syncthreads" => (0, vec![], tcx.mk_nil()),
 
+            "r600_read_workdim" | "r600_read_ngroups_x" | "r600_read_ngroups_y" |
+            "r600_read_ngroups_z" | "r600_read_global_size_x" | "r600_read_global_size_y" |
+            "r600_read_global_size_z" | "r600_read_local_size_x" | "r600_read_local_size_y" |
+            "r600_read_local_size_z" | "r600_read_tgid_x" | "r600_read_tgid_y" |
+            "r600_read_tgid_z" | "r600_read_tidig_x" | "r600_read_tidig_y" |
+            "r600_read_tidig_z" | "r600_read_global_offset_x" | "r600_read_global_offset_y" |
+            "r600_read_global_offset_z" => (0, vec![], tcx.types.i32),
+
+            "amdgcn_read_workdim" | "amdgcn_ngroups_x" | "amdgcn_ngroups_y" |
+            "amdgcn_ngroups_z" | "amdgcn_global_size_x" | "amdgcn_global_size_y" |
+            "amdgcn_global_size_z" | "amdgcn_local_size_x" | "amdgcn_local_size_y" |
+            "amdgcn_local_size_z" | "amdgcn_workgroup_id_x" | "amdgcn_workgroup_id_y" |
+            "amdgcn_workgroup_id_z" | "amdgcn_workitem_id_x" | "amdgcn_workitem_id_y" |
+            "amdgcn_workitem_id_z" | "amdgcn_global_offset_x" | "amdgcn_global_offset_y" |
+            "amdgcn_global_offset_z" => (0, vec![], tcx.types.i32),
+
             ref other => {
                 span_err!(tcx.sess, it.span, E0093,
                           "unrecognized intrinsic function: `{}`", *other);

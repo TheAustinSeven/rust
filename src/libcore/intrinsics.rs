@@ -616,3 +616,63 @@ extern "rust-intrinsic" {
     pub fn grid_dim_z() -> i32;
     pub fn syncthreads();
 }
+
+#[cfg(not(stage0))]
+#[cfg(arch = "amdgcn")]
+extern "rust-intrinsic" {
+    pub fn amdgcn_read_workdim() -> i32;
+
+    pub fn amdgcn_ngroups_x() -> i32;
+    pub fn amdgcn_ngroups_y() -> i32;
+    pub fn amdgcn_ngroups_z() -> i32;
+
+    pub fn amdgcn_global_size_x() -> i32;
+    pub fn amdgcn_global_size_y() -> i32;
+    pub fn amdgcn_global_size_z() -> i32;
+
+    pub fn amdgcn_local_size_x() -> i32;
+    pub fn amdgcn_local_size_y() -> i32;
+    pub fn amdgcn_local_size_z() -> i32;
+
+    pub fn amdgcn_workgroup_id_x() -> i32;
+    pub fn amdgcn_workgroup_id_y() -> i32;
+    pub fn amdgcn_workgroup_id_z() -> i32;
+
+    pub fn amdgcn_workitem_id_x() -> i32;
+    pub fn amdgcn_workitem_id_y() -> i32;
+    pub fn amdgcn_workitem_id_z() -> i32;
+
+    pub fn amdgcn_global_offset_x() -> i32;
+    pub fn amdgcn_global_offset_y() -> i32;
+    pub fn amdgcn_global_offset_z() -> i32;
+}
+
+#[cfg(not(stage0))]
+#[cfg(arch = "r600")]
+extern "rust-intrinsic" {
+    pub fn r600_read_workdim() -> i32;
+
+    pub fn r600_read_ngroups_x() -> i32;
+    pub fn r600_read_ngroups_y() -> i32;
+    pub fn r600_read_ngroups_z() -> i32;
+
+    pub fn r600_read_global_size_x() -> i32;
+    pub fn r600_read_global_size_y() -> i32;
+    pub fn r600_read_global_size_z() -> i32;
+
+    pub fn r600_read_local_size_x() -> i32;
+    pub fn r600_read_local_size_y() -> i32;
+    pub fn r600_read_local_size_z() -> i32;
+
+    pub fn r600_read_tgid_x() -> i32;
+    pub fn r600_read_tgid_y() -> i32;
+    pub fn r600_read_tgid_z() -> i32;
+
+    pub fn r600_read_tidig_x() -> i32;
+    pub fn r600_read_tidig_y() -> i32;
+    pub fn r600_read_tidig_z() -> i32;
+
+    pub fn r600_read_global_offset_x() -> i32;
+    pub fn r600_read_global_offset_y() -> i32;
+    pub fn r600_read_global_offset_z() -> i32;
+}
