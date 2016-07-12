@@ -20,6 +20,7 @@ pub fn target() -> Target {
         executables: false,
         no_compiler_rt: true,
         allow_asm: false,
+        features: "+ptx42".to_string(),
         .. Default::default()
     };
     Target {
